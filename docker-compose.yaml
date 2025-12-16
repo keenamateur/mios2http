@@ -1,0 +1,41 @@
+# docker-compose.yml
+services:
+  mios2http:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: keenamateurz/mios2http:latest
+    container_name: mios2http
+    cap_add:
+      - NET_ADMIN
+    #user: "0:0"
+    env_file:
+     - .env
+    restart: unless-stopped
+    environment:
+      - MQTT_BROKER=${MQTT_BROKER}
+      - MQTT_PORT=${MQTT_PORT}
+      - MQTT_USER=${MQTT_USER}
+      - MQTT_PASSWORD=${MQTT_PASSWORD}
+      - HTTP_CLIENT_IP=${HTTP_CLIENT_IP}
+      - HTTP_DEVICE_PORT=${HTTP_DEVICE_PORT}
+      - HTTP_STATE_PORT=${HTTP_STATE_PORT}
+      - VERA_IP=${VERA_IP}
+      - VERA_PORT=${VERA_PORT}
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    networks:
+      proxy_net:
+      vpn:
+        #priority: 1000
+        priority: 700
+
+networks:
+  proxy_net:
+    external: true
+    enable_ipv6: false
+  vpn:
+    external: true
+    enable_ipv6: false
+
+      

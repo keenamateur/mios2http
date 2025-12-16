@@ -1,0 +1,12 @@
+MQTT_BROKER=172.10.10.1
+MQTT_PORT=1883
+MQTT_USER=mqtt
+MQTT_PASSWORD=mqtt
+HTTP_CLIENT_IP=192.168.1.100 # base ip wil lbe updated automaticaly
+HTTP_DEVICE_PORT=1910
+HTTP_STATE_PORT=1904
+# MY_DOMAIN=
+VERA_IP=192.168.1.100
+VERA_PORT=3480
+# Vera Device FILTER room:device can use regex like Kitchen:Li will list all Kitchen devices with the name starting with Li.
+VERA_EVENT_FILTER="Konyha:AC*#Nappali:AC*#Háló:AC*#Fürdő:AC*#Terasz:AC*#Terasz:MOVE*#Biztonság:DOOR*#Szerver:AC*#Szerver:HUMI*#Szerver:TEMP*#Áram:AC*"
