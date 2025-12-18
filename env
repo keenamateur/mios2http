@@ -8,5 +8,5 @@ HTTP_STATE_PORT=1904
 # MY_DOMAIN=
 VERA_IP=192.168.1.100
 VERA_PORT=3480
-# Vera Device FILTER room:device can use regex like Kitchen:Li will list all Kitchen devices with the name starting with Li.
+# Use regex matching for incoming events to filter unnecessary traffic. Structure: 'room:device' 
 VERA_EVENT_FILTER="Konyha:AC*#Nappali:AC*#Háló:AC*#Fürdő:AC*#Terasz:AC*#Terasz:MOVE*#Biztonság:DOOR*#Szerver:AC*#Szerver:HUMI*#Szerver:TEMP*#Áram:AC*"
